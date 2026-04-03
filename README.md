@@ -1,2 +1,3 @@
-# Aprendizado Git/GitHub e Versionamento
-Este repositório foi criado com o objetivo de consolidar e praticar os conhecimentos adquiridos no curso de Git e Versionamento de Código da Ada Tech, juntamente com aprendizados complementares por meio de videoaulas.
+# 🚀 Projeto de Estudos - Git e Versionamento
+
+Este repositório contém meus estudos sobre Git e versionamento de código, com base no curso da Ada Tech e conteúdos complementares do YouTube.
