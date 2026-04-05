@@ -50,6 +50,7 @@ O GitHub é uma plataforma que permite armazenar repositórios na nuvem, facilit
 ```bash
 git config --global user.name "seu nome"
 git config --global user.email "seu melhor email"
+```
 
 Esses comandos servem para cadastrar o usuário que está realizando os versionamentos.
 
