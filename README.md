@@ -68,9 +68,6 @@ Depois:
 Crie uma pasta no seu computador
 Copie o caminho dessa pasta
 Abra o terminal (ou CMD)
-
-Execute:
-
 cd caminho-da-sua-pasta
 git clone <link-do-repositório>
 
@@ -133,3 +130,18 @@ Mostra todo o histórico de commits realizados.
 git restore
 
 Permite desfazer alterações em arquivos.
+
+━━━━━━━━━━━━━━━━━━
+
+🌐 Repositórios Remotos
+
+(Em construção 🚧)
+
+🌿 Git Branch
+
+(Em construção 🚧)
+
+🔀 Merging branches
+
+(Em construção 🚧)
+
