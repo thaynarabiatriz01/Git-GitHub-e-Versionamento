@@ -54,11 +54,13 @@ git config --global user.email "seu melhor email"
 
 Esses comandos servem para cadastrar o usuário que está realizando os versionamentos.
 
-🔹 Como acessar um repositório Git?
-🔸 Existem duas formas: remota e local
-🌐 Forma remota
+### 🔹 Como acessar um repositório Git? 
 
-Se você estiver utilizando o GitHub:
+🔸 Existem duas formas: remota e local
+
+**🌐 Forma remota**
+
+> Se você estiver utilizando o GitHub:
 
 Acesse seu repositório
 Clique em Code
@@ -66,32 +68,38 @@ Copie o link HTTPS
 
 Depois:
 
-Crie uma pasta no seu computador
-Copie o caminho dessa pasta
-Abra o terminal (ou CMD)
+- Crie uma pasta no seu computador
+- Copie o caminho dessa pasta
+- Abra o terminal (ou CMD)
+
+```bash
 cd caminho-da-sua-pasta
 git clone <link-do-repositório>
+```
 
 ➡️ O comando cd entra na pasta
+
 ➡️ O git clone baixa o repositório para sua máquina
 
 💻 Forma local
-Crie ou abra uma pasta do projeto
-Abra essa pasta na sua IDE
-Use o terminal e execute:
-git init
 
+- Crie ou abra uma pasta do projeto
+- Abra essa pasta na sua IDE
+- Use o terminal e execute:
+```bash
+git init
+```
 ➡️ Esse comando inicia um repositório local
 
 ━━━━━━━━━━━━━━━━━━
 
-👀 De olho no meu código
+### 👀 De olho no meu código
+```bash
 git status
-
+```
 O git status mostra:
-
-Em qual branch você está
-Quais arquivos foram modificados
+- Em qual branch você está
+- Quais arquivos foram modificados
 
 Arquivos em vermelho indicam que foram alterados, mas ainda não foram adicionados.
 
@@ -107,42 +115,68 @@ Cada nova funcionalidade é um galho (branch)
 👉 Isso permite trabalhar em novas funcionalidades sem alterar o código principal
 
 ➕ Adicionando alterações
+```bash
 git add .
+```
 
-Esse comando adiciona todas as alterações feitas.
-Os arquivos saem do estado modified e vão para staged.
+👉 Esse comando adiciona todas as alterações feitas.
+- Os arquivos saem do estado modified e vão para staged.
 
 📊 Verificando diferenças
+```bash
 git diff
-
-Mostra as linhas que foram alteradas no código.
+```
+- Mostra as linhas que foram alteradas no código.
 
 💾 Salvando alterações
+```bash
 git commit -m "mensagem"
-
+```
 Cria um ponto de salvamento do projeto com uma descrição das mudanças.
 
 📜 Histórico
+```bash
 git log
-
+```
 Mostra todo o histórico de commits realizados.
 
 🔄 Restaurando arquivos
+```bash
 git restore
-
+```
 Permite desfazer alterações em arquivos.
 
 ━━━━━━━━━━━━━━━━━━
 
-🌐 Repositórios Remotos
+## 🌐 Repositórios Remotos
 
-(Em construção 🚧)
+### 🔗 Interagindo com o Repositório Remoto
 
-🌿 Git Branch
+Aprenda os principais comandos para trabalhar com repositórios remotos no Git:
 
-(Em construção 🚧)
+### 📌 Comandos principais
 
-🔀 Merging branches
+🔹 **git remote**  
+Exibe os repositórios remotos configurados no projeto.
 
-(Em construção 🚧)
+🔹 **git branch**  
+Lista todas as branches existentes (locais e remotas).  
+> ⚠️ Este comando **não envia código** para o repositório remoto.
 
+🔹 **git pull**  
+Atualiza o repositório local com as alterações do remoto, realizando um *merge* automático.  
+> ⚠️ Pode gerar conflitos se houver alterações locais não sincronizadas.
+
+🔹 **git fetch**  
+Baixa as alterações do repositório remoto, mas **não aplica automaticamente** no seu projeto local.
+
+---
+
+### ✅ Boa prática recomendada
+
+Antes de usar o `git pull`, siga este fluxo:
+
+```bash
+git fetch
+git diff
+git pull
