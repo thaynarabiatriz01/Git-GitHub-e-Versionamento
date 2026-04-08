@@ -11,6 +11,19 @@
 ## 📌 Sobre o Projeto
 Este repositório contém meus estudos sobre Git e versionamento de código, com base no curso da Ada Tech e conteúdos complementares do YouTube.
 
+## 📚 Recursos de Estudo
+
+Os conteúdos utilizados para este projeto incluem:
+
+- 🎓 **Ada Tech**  
+  Plataforma base para aprendizado  
+  🔗 https://sso.ada.tech/?redirect_uri=https%3A%2F%2Fcomunidade.ada.tech%2F  
+
+- 🎥 **Curso de Git e GitHub (YouTube)**  
+  Conteúdo complementar com explicações práticas  
+  🔗 https://www.youtube.com/watch?v=192HgwRgOYE&t=2378s
+
+
 ---
 
 ## 🎯 Objetivo
@@ -81,7 +94,7 @@ O git status mostra:
 
 Arquivos em vermelho indicam que foram alterados, mas ainda não foram adicionados.
 
-🌿 Mas o que é uma Branch?
+**🌿 Mas o que é uma Branch?**
 
 🔸 Explicando de forma simples:
 
@@ -91,6 +104,7 @@ O tronco principal é a branch principal (geralmente main)
 Cada nova funcionalidade é um galho (branch)
 
 👉 Isso permite trabalhar em novas funcionalidades sem alterar o código principal
+━━━━━━━━━━━━━━━━━━
 
 ➕ Adicionando alterações
 ```bash
@@ -104,12 +118,14 @@ git add nome-do-arquivo
 ➡️ Adiciona um arquivo específico
 
 👉 Os arquivos saem do estado modified e vão para staged.
+━━━━━━━━━━━━━━━━━━
 
 📊 Verificando diferenças
 ```bash
 git diff
 ```
 👉 Mostra as linhas que foram alteradas no código.
+━━━━━━━━━━━━━━━━━━
 
 💾 Salvando alterações
 ```bash
@@ -217,7 +233,7 @@ Lista todas as branches existentes (locais e remotas).
 ```
 > Este comando permite você desfazer alterações (cuidado ⚠️)
 
- **.gitignore**
+ ### 📌 .gitignore
 
 Arquivo usado para ignorar arquivos/pastas que não devem ser versionados.
 
