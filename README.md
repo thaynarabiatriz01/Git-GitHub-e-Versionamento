@@ -42,11 +42,25 @@ Grande parte das suas operações são locais, o que faz com que muitos comandos
 ### 🔹 GitHub
 O GitHub é uma plataforma que permite armazenar repositórios na nuvem, facilitando o compartilhamento de código e o trabalho em equipe.
 
+### 🧠 Conceito Importante
+🔹 Estados dos arquivos no Git
+- Modified → arquivo alterado
+- Staged → pronto para commit
+- Committed → salvo no histórico
+
 ━━━━━━━━━━━━━━━━━━
 
 ## 💻 Comandos Git
 
 ### 🔹 Configuração inicial
+
+**Ao criarmos a pasta do projeto seguir esses comandos é essencial**
+
+```bash
+git init
+```
+➡️ Esse comando inicia um repositório local e cria um arquivo chamado **.git**
+
 ```bash
 git config --global user.name "seu nome"
 git config --global user.email "seu melhor email"
@@ -54,42 +68,6 @@ git config --global user.email "seu melhor email"
 
 Esses comandos servem para cadastrar o usuário que está realizando os versionamentos.
 
-### 🔹 Como acessar um repositório Git? 
-
-🔸 Existem duas formas: remota e local
-
-**🌐 Forma remota**
-
-> Se você estiver utilizando o GitHub:
-
-Acesse seu repositório
-Clique em Code
-Copie o link HTTPS
-
-Depois:
-
-- Crie uma pasta no seu computador
-- Copie o caminho dessa pasta
-- Abra o terminal (ou CMD)
-
-```bash
-cd caminho-da-sua-pasta
-git clone <link-do-repositório>
-```
-
-➡️ O comando cd entra na pasta
-
-➡️ O git clone baixa o repositório para sua máquina
-
-💻 Forma local
-
-- Crie ou abra uma pasta do projeto
-- Abra essa pasta na sua IDE
-- Use o terminal e execute:
-```bash
-git init
-```
-➡️ Esse comando inicia um repositório local
 
 ━━━━━━━━━━━━━━━━━━
 
@@ -118,27 +96,37 @@ Cada nova funcionalidade é um galho (branch)
 ```bash
 git add .
 ```
-
 👉 Esse comando adiciona todas as alterações feitas.
-- Os arquivos saem do estado modified e vão para staged.
+
+```bash
+git add nome-do-arquivo
+```
+➡️ Adiciona um arquivo específico
+
+👉 Os arquivos saem do estado modified e vão para staged.
 
 📊 Verificando diferenças
 ```bash
 git diff
 ```
-- Mostra as linhas que foram alteradas no código.
+👉 Mostra as linhas que foram alteradas no código.
 
 💾 Salvando alterações
 ```bash
 git commit -m "mensagem"
 ```
-Cria um ponto de salvamento do projeto com uma descrição das mudanças.
+👉 Cria um ponto de salvamento do projeto com uma descrição das mudanças.
 
-📜 Histórico
+📜 Histórico de commits
 ```bash
 git log
 ```
-Mostra todo o histórico de commits realizados.
+👉 Mostra todo o histórico de commits realizados.
+
+```bash
+git log --oneline
+```
+➡️ Versão resumida do histórico
 
 🔄 Restaurando arquivos
 ```bash
@@ -154,23 +142,32 @@ Permite desfazer alterações em arquivos.
 
 Aprenda os principais comandos para trabalhar com repositórios remotos no Git:
 
-### 📌 Comandos principais
+🔹 Conecta repositório local ao remoto
+```bash
+git remote add origin <url>
+```
+👉 Para acessar o URL do seu repositório é só olhar em "CODE" e depois HTTPS
 
-🔹 **git remote**  
-Exibe os repositórios remotos configurados no projeto.
+```bash
+git remote -v
+```
+➡️ Lista repositórios conectados
 
-🔹 **git branch**  
-Lista todas as branches existentes (locais e remotas).  
-> ⚠️ Este comando **não envia código** para o repositório remoto.
+```bash
+git push -u origin main
+```
+➡️ Envia commits para o GitHub
 
-🔹 **git pull**  
+```bash
+ git pull
+```
 Atualiza o repositório local com as alterações do remoto, realizando um *merge* automático.  
 > ⚠️ Pode gerar conflitos se houver alterações locais não sincronizadas.
 
-🔹 **git fetch**  
+```bash
+ git fetch 
+```
 Baixa as alterações do repositório remoto, mas **não aplica automaticamente** no seu projeto local.
-
----
 
 ### ✅ Boa prática recomendada
 
@@ -180,3 +177,122 @@ Antes de usar o `git pull`, siga este fluxo:
 git fetch
 git diff
 git pull
+```
+━━━━━━━━━━━━━━━━━━
+
+### 📌 Comandos e Conceitos Essenciais do Git
+
+**🌿 Branches (Ramificações)**
+
+- Branches permitem trabalhar em funcionalidades sem afetar o código principal.
+
+```bash
+ git branch
+```
+Lista todas as branches existentes (locais e remotas).  
+> ⚠️ Este comando **não envia código** para o repositório remoto.
+
+```bash
+ git branch nome-da-branch
+```
+> Este comando permite você criar uma nova branch
+
+```bash
+ git checkout nome-da-branch
+```
+> Este comando permite você trocar de branch
+
+```bash
+ git checkout -b nome-da-branch
+```
+> Este comando permite você criar e já troca para a nova branch
+
+```bash
+ git rm nome-do-arquivo
+```
+> Este comando permite você remover arquivo do Git
+
+```bash
+ git reset
+```
+> Este comando permite você desfazer alterações (cuidado ⚠️)
+
+ **.gitignore**
+
+Arquivo usado para ignorar arquivos/pastas que não devem ser versionados.
+
+📌 Exemplo:
+```bash
+node_modules/
+.env
+__pycache__/
+```
+
+➡️ Evita subir arquivos desnecessários ou sensíveis (como senhas)
+━━━━━━━━━━━━━━━━━━
+
+**🔀 Merge (Junção de Branches)**
+
+O git merge é utilizado para unir alterações de uma branch em outra, integrando funcionalidades desenvolvidas separadamente ao projeto principal.
+
+```bash
+ git merge nome-da-branch
+```
+
+➡️ Aplica os commits da branch informada na branch atual
+
+⚠️ É importante estar na branch que receberá as alterações
+
+💡 Pode ocorrer conflito de merge quando duas branches alteram a mesma parte do código, sendo necessário resolver manualmente
+
+---
+**🔹 Fluxo básico do Git**
+```bash
+git status → git add → git commit → git push
+```
+
+### 🌐 Conceitos do Mundo Real (GitHub)
+**🔹 Pull Request (PR)**
+
+O Pull Request é uma solicitação para que suas alterações sejam analisadas antes de entrar no projeto principal.
+
+📌 Fluxo:
+
+Criar uma branch
+Fazer alterações
+Enviar (git push)
+Abrir um PR no GitHub
+
+➡️ Permite:
+
+- Revisão de código
+- Discussão em equipe
+- Aprovação antes do merge
+🔹 Fork
+
+**O Fork é uma cópia de um repositório para sua conta.**
+
+➡️ Usado para:
+
+Contribuir em projetos open source
+Fazer alterações sem afetar o projeto original
+
+📌 Fluxo:
+
+1. Fazer um fork no GitHub
+2. Clonar o repositório
+3. Criar uma branch
+4. Fazer alterações
+5. Abrir Pull Request
+
+**⚡ Fluxo Profissional (Resumo)**
+```bash
+git clone
+git checkout -b minha-feature
+git add .
+git commit -m "feat: minha alteração"
+git push
+```
+
+➡️ Depois: abrir Pull Request no GitHub
+
